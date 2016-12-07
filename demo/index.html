@@ -15,8 +15,10 @@
 	<meta name="author" content="http://michaelynch.com">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
-	<link rel="stylesheet" type="text/css" media="screen" href="../src/css/style.css">
+
+	<link rel="stylesheet" type="text/css" href="../icons/css/weather-icons.min.css">
+
+	<link rel="stylesheet" type="text/css" href="../icons/css/weather-icons-wind.min.css">
 	
 </head>
 
@@ -24,8 +26,9 @@
 
 	<div class="weather-wrapper hide">
 
-		<img src="" class="weather-icon" alt="Weather Icon" />
-		
+		<p><strong>Font Icon</strong>
+		<br /><span style="font-size: 40px;color:#601a38;"><i class="weather-icon-class wi"></i></span></p>
+	
 		<p><strong>Place</strong>
 		<br /><span class="weather-place"></span></p>
 		
@@ -34,29 +37,11 @@
 		
 		<p><strong>Description</strong>
 		<br /><span class="weather-description capitalize"></span></p>
-		
-		<p><strong>Humidity</strong>
-		<br /><span class="weather-humidity"></span></p>
-		
-		<p><strong>Wind speed</strong>
-		<br /><span class="weather-wind-speed"></span></p>
-		
-		<p><strong>Sunrise</strong>
-		<br /><span class="weather-sunrise"></span></p>
-		
-		<p><strong>Sunset</strong>
-		<br /><span class="weather-sunset"></span></p>
 	
 	</div>
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-	<script type="text/javascript">
-	if (typeof jQuery == 'undefined') {
-	    document.write(unescape("%3Cscript src='src/js/lib/jquery.1.9.1.min.js' type='text/javascript'%3E%3C/script%3E"));
-	}
-	</script>
-	
 	<script src="../src/openWeather.js"></script>
 	
 	<script>
@@ -64,8 +49,9 @@
 		$(function() {
 		
 			$('.weather-temperature').openWeather({
-				key: 'c9d49310f8023ee2617a7634de23c2aa',
-				city: 'Toronto, ON',
+				key: '25e07d08db8f7737ed2cc9ac4ad89a9b',
+				city: 'Kennett Square, US',
+				units: 'f',
 				descriptionTarget: '.weather-description',
 				windSpeedTarget: '.weather-wind-speed',
 				minTemperatureTarget: '.weather-min-temperature',
@@ -75,6 +61,7 @@
 				sunsetTarget: '.weather-sunset',
 				placeTarget: '.weather-place',
 				iconTarget: '.weather-icon',
+				iconTargetClass: '.weather-icon-class',
 				customIcons: '../src/img/icons/weather/',
 				success: function() {
 				

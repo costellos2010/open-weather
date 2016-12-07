@@ -30,6 +30,7 @@ Licensed under the MIT license
 			sunsetTarget: null,
 			placeTarget: null,
 			iconTarget: null,
+			iconTargetClass: null,
 			customIcons: null,
 			units: 'c',
 			city: null,
@@ -202,36 +203,67 @@ Licensed under the MIT license
 						if(defaultIconFileName == '01d' || defaultIconFileName == '01n') {
 
 							iconName = 'clear';
+							if(timeOfDay == 'day'){
+								iconClass = 'wi-day-sunny';
+							}else{
+								iconClass = 'wi-night-clear';
+							}
+							
 						}
 
 						// if icon is clouds
 						if(defaultIconFileName == '02d' || defaultIconFileName == '02n' || defaultIconFileName == '03d' || defaultIconFileName == '03n' || defaultIconFileName == '04d' || defaultIconFileName == '04n') {
 
 							iconName = 'clouds';
+							if(timeOfDay == 'day'){
+								iconClass = 'wi-day-cloudy';
+							}else{
+								iconClass = 'wi-night-alt-cloudy';
+							}
 						}
 
 						// if icon is rain
 						if(defaultIconFileName == '09d' || defaultIconFileName == '09n' || defaultIconFileName == '10d' || defaultIconFileName == '10n') {
 
 							iconName = 'rain';
+							if(timeOfDay == 'day'){
+								iconClass = 'wi-day-rain';
+							}else{
+								iconClass = 'wi-night-alt-rain';
+							}
 						}
 
 						// if icon is thunderstorm
 						if(defaultIconFileName == '11d' || defaultIconFileName == '11n') {
 
 							iconName = 'storm';
+							if(timeOfDay == 'day'){
+								iconClass = 'wi-day-lightning';
+							}else{
+								iconClass = 'wi-night-alt-lightning';
+							}
 						}
 
 						// if icon is snow
 						if(defaultIconFileName == '13d' || defaultIconFileName == '13n') {
 
 							iconName = 'snow';
+							if(timeOfDay == 'day'){
+								iconClass = 'wi-day-snow';
+							}else{
+								iconClass = 'wi-night-clear';
+							}
 						}
 
 						// if icon is mist
 						if(defaultIconFileName == '50d' || defaultIconFileName == '50n') {
 
 							iconName = 'mist';
+							if(timeOfDay == 'day'){
+								iconClass = 'wi-sprinkle';
+							}else{
+								iconClass = 'wi-sprinkle';
+							}
 						}
 
 						// define custom icon URL
@@ -245,6 +277,7 @@ Licensed under the MIT license
 
 					// set iconTarget src attribute as iconURL
 					$(s.iconTarget).attr('src', iconURL);
+					$(s.iconTargetClass).addClass(iconClass);
 				}
 
 				// if placeTarget isn't null
